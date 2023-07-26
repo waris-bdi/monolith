@@ -8,6 +8,7 @@ $ pip install fastapi
 
 $ pip install "uvicorn[standard]"
 
+$ pip install requests
 
 ## Run Server
 $ uvicorn main:app --reload

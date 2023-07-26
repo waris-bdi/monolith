@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Header
+import requests
 
 app = FastAPI()
 
@@ -39,10 +40,7 @@ async def read_books(x_api_key: str = Header()):
 
 
 def authen(x_api_key: str):
-    if not x_api_key:
-        raise HTTPException(status_code=400, detail="x_api_key header missing")
-
     if x_api_key == "thisiscool":
-        return {"authorized": True}
-
-    raise HTTPException(status_code=401, detail="Unauthorized")
+        return True
+    else:
+        return False
